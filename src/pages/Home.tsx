@@ -1,35 +1,66 @@
 import React from "react";
-import { ArrowRight, Zap, Shield, TrendingUp, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Zap,
+  Shield,
+  TrendingUp,
+  Users,
+  FileText,
+  Network,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import HeroEnergy from "@/assets/HeroEnergy.jpg";
 
 const Home = () => {
-  const features = [
-    {
-      icon: Zap,
-      title: "Smart Grid Solutions",
-      description:
-        "Advanced smart grid and utility management technologies for modern energy systems.",
-    },
+  const services = [
     {
       icon: Shield,
-      title: "Policy & Regulatory",
+      title: "Policy & Regulatory Advisory",
       description:
-        "Expert advisory services for sustainable energy policies and regulatory frameworks.",
+        "We help governments, regulators, and institutions design sound policies and regulatory frameworks that create an enabling environment for sustainable energy growth.",
+      image:
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
     },
     {
-      icon: TrendingUp,
-      title: "Feasibility Studies",
+      icon: FileText,
+      title: "Feasibility Studies (Solar & Hybrid Projects)",
       description:
-        "Comprehensive technical and financial analysis for solar and hybrid projects.",
+        "Our team delivers in-depth technical and financial feasibility assessments to ensure solar and hybrid energy projects are practical, bankable, and impactful.",
+      image:
+        "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
+    },
+    {
+      icon: Network,
+      title: "Power Systems & Grid Interconnection Studies",
+      description:
+        "We conduct advanced grid analysis—load flow, stability, and interconnection studies—to ensure safe and reliable integration of renewable energy into existing networks.",
+      image:
+        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
+    },
+    {
+      icon: Zap,
+      title: "Smart Grid & Smart Utility Management",
+      description:
+        "From smart metering to digital utility operations, we design solutions that modernize utilities, improve efficiency, and enable smarter energy management.",
+      image:
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     },
     {
       icon: Users,
+      title: "Energy Access & Planning",
+      description:
+        "We support national and county governments in developing clean energy access plans and strategies that expand opportunities for communities and investors alike.",
+      image:
+        "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&q=80",
+    },
+    {
+      icon: TrendingUp,
       title: "Investment Advisory",
       description:
-        "Strategic guidance for investors and developers in renewable energy markets.",
+        "We provide investors and developers with tailored advisory, from risk analysis to investment prospectuses, unlocking opportunities in the renewable energy market.",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     },
   ];
 
@@ -90,38 +121,82 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Key Features */}
-      <section className="py-20">
+      {/* Services Section - Inspired by Screenshot Design */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="mb-4">Why Choose Psytech Consulting</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our Services
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               We combine technical rigor, innovation, and practical
               implementation strategies to deliver solutions that are both
               bankable and impactful.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => {
-              const IconComponent = feature.icon;
+          <div className="grid md:grid-cols-2 gap-16 md:gap-20">
+            {services.map((service, index) => {
+              const IconComponent = service.icon;
+              const isEven = index % 2 === 0;
+
               return (
-                <Card
+                <div
                   key={index}
-                  className="shadow-card hover:shadow-elegant transition-smooth"
+                  className={`flex flex-col ${
+                    isEven ? "md:items-start" : "md:items-end"
+                  } gap-8`}
                 >
-                  <CardContent className="p-6 text-center">
-                    <div className="bg-gradient-primary w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <IconComponent className="h-8 w-8 text-white" />
+                  {/* Circular Image Container */}
+                  <div
+                    className={`relative w-full flex ${
+                      isEven ? "justify-start" : "justify-end"
+                    }`}
+                  >
+                    <div className="relative">
+                      {/* Outer decorative circle */}
+                      <div className="absolute inset-0 rounded-full border-2 border-gray-200 transform scale-110"></div>
+
+                      {/* Image circle */}
+                      <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
                     </div>
-                    <h3 className="text-lg font-semibold mb-3">
-                      {feature.title}
-                    </h3>
-                    <p className="text-muted-foreground">
-                      {feature.description}
+                  </div>
+
+                  {/* Content */}
+                  <div
+                    className={`max-w-md ${
+                      isEven ? "md:text-left" : "md:text-right"
+                    } text-left`}
+                  >
+                    <div
+                      className={`flex items-center gap-3 mb-4 ${
+                        isEven ? "" : "md:justify-end"
+                      }`}
+                    >
+                      <div className="bg-gradient-to-r from-blue-600 to-teal-600 w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <IconComponent className="h-6 w-6 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-gray-900">
+                        {service.title}
+                      </h3>
+                    </div>
+
+                    <p className="text-gray-600 leading-relaxed text-base">
+                      {service.description}
                     </p>
-                  </CardContent>
-                </Card>
+
+                    <button className="mt-4 text-blue-600 hover:text-blue-800 font-medium flex items-center gap-2">
+                      Read on our efforts
+                      <ArrowRight className="h-4 w-4" />
+                    </button>
+                  </div>
+                </div>
               );
             })}
           </div>
