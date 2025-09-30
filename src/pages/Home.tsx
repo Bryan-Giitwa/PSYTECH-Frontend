@@ -12,6 +12,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import HeroEnergy from "@/assets/HeroEnergy.jpg";
 import { motion } from "framer-motion";
+import ReguratoryAdvice from "@/assets/ReguratoryAdvice.jpg";
+import SolarPower from "@/assets/SolarPower.jpeg";
+import PowerGrid from "@/assets/PowerGrid.jpeg";
+import SmatGrid from "@/assets/SmatGrid.jpg";
+import EnergyAccess from "@/assets/EnergyAccess.jpeg";
+import InvestmentAdvisory from "@/assets/InvestmentAdvisory.jpeg";
 
 // Animation variants
 const fadeUp = {
@@ -63,48 +69,42 @@ const Home = () => {
       title: "Policy & Regulatory Advisory",
       description:
         "We help governments, regulators, and institutions design sound policies and regulatory frameworks that create an enabling environment for sustainable energy growth.",
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+      image: ReguratoryAdvice,
     },
     {
       icon: FileText,
       title: "Feasibility Studies (Solar & Hybrid Projects)",
       description:
         "Our team delivers in-depth technical and financial feasibility assessments to ensure solar and hybrid energy projects are practical, bankable, and impactful.",
-      image:
-        "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=80",
+      image: SolarPower,
     },
     {
       icon: Network,
       title: "Power Systems & Grid Interconnection Studies",
       description:
         "We conduct advanced grid analysis—load flow, stability, and interconnection studies—to ensure safe and reliable integration of renewable energy into existing networks.",
-      image:
-        "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800&q=80",
+      image: PowerGrid,
     },
     {
       icon: Zap,
       title: "Smart Grid & Smart Utility Management",
       description:
         "From smart metering to digital utility operations, we design solutions that modernize utilities, improve efficiency, and enable smarter energy management.",
-      image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+      image: SmatGrid,
     },
     {
       icon: Users,
       title: "Energy Access & Planning",
       description:
         "We support national and county governments in developing clean energy access plans and strategies that expand opportunities for communities and investors alike.",
-      image:
-        "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=800&q=80",
+      image: EnergyAccess,
     },
     {
       icon: TrendingUp,
       title: "Investment Advisory",
       description:
         "We provide investors and developers with tailored advisory, from risk analysis to investment prospectuses, unlocking opportunities in the renewable energy market.",
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+      image: InvestmentAdvisory,
     },
   ];
 
