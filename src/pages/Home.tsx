@@ -3,7 +3,7 @@ import { ArrowRight, Zap, Shield, TrendingUp, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import heroImage from "@/assets/hero-energy.jpg";
+import HeroEnergy from "@/assets/HeroEnergy.jpg";
 
 const Home = () => {
   const features = [
@@ -39,7 +39,7 @@ const Home = () => {
       <section className="relative pt-16 min-h-screen flex items-center justify-center overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${heroImage})` }}
+          style={{ backgroundImage: `url(${HeroEnergy})` }}
         />
         <div className="absolute inset-0 bg-gradient-hero opacity-90" />
 
@@ -67,7 +67,7 @@ const Home = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white/10"
+              className="border-white text-white bg-white/10"
               asChild
             >
               <Link to="/contact">Get In Touch</Link>
