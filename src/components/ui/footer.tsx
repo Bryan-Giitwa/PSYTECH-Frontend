@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   return (
@@ -6,7 +7,13 @@ const Footer = () => {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="md:col-span-1">
+          <div className="md:col-span-1 flex flex-col items-start">
+            <img
+              // src={logoBackround}
+              src={logo}
+              alt="Psytech Consulting Logo"
+              className="mb-4 w-20 h-20 object-contain rounded-lg shadow"
+            />
             <h3 className="text-xl font-bold mb-4">PSYTECH CONSULTING LTD</h3>
             <p className="text-primary-foreground/80 mb-4">
               Forward-looking energy consulting company dedicated to advancing
